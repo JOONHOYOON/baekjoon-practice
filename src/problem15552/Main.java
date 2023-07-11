@@ -5,26 +5,28 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) {
-		BufferedReader bfr=new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bfw=new BufferedWriter(new OutputStreamWriter(System.out));
-		try {		
-			int num=bfr.read();
-			bfw.write(num);
-			for(int i=0;i<num;i++) {
-				int num2=bfr.read();
-				int num3=bfr.read();
-				bfw.write(num2+num3);
-			}
-			bfw.flush();
-			bfw.close();
-			
-		}catch(IOException e) {
-			e.printStackTrace();
+	public static void main(String[] args) throws IOException{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int count=Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		int a,b;
+		
+		for(int i=0;i<count;i++) {
+			st=new StringTokenizer(br.readLine());
+			a=Integer.parseInt(st.nextToken());
+			b=Integer.parseInt(st.nextToken());
+			bw.write((a+b)+"\n");
 		}
+		br.close();
+		
+		bw.flush();
+		bw.close();
 		
 		
 		
